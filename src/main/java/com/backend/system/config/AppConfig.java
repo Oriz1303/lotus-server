@@ -41,7 +41,7 @@ public class AppConfig {
 			public CorsConfiguration getCorsConfiguration(HttpServletRequest request) {
 				CorsConfiguration config = new CorsConfiguration();
 				config.setAllowedOrigins(Arrays.asList("http://localhost:3000", "http://127.0.0.1:3000",
-						"http://localhost:8080", "https://lotus-fe.vercel.app/"));
+						"http://localhost:8080", "https://lotus-fe.vercel.app"));
 				config.setAllowedMethods(Collections.singletonList("*"));
 				config.setAllowCredentials(true);
 				config.setAllowedHeaders(Collections.singletonList("*"));
