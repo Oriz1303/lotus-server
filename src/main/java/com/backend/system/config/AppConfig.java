@@ -36,25 +36,24 @@ public class AppConfig {
 	}
 
 	private CorsConfigurationSource corsConfigurationSource() {
-		return new CorsConfigurationSource() {
+//		return new CorsConfigurationSource() {
 
-			@Override
-			public CorsConfiguration getCorsConfiguration(HttpServletRequest request) {
-				CorsConfiguration config = new CorsConfiguration();
-				UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-				config.setAllowedOrigins(Arrays.asList("http://localhost:3000", "http://127.0.0.1:3000",
-						"http://localhost:8080", "https://lotus-fe.vercel.app"));
-				config.setAllowedMethods(Collections.singletonList("*"));
-				config.setAllowCredentials(true);
-				config.setAllowedHeaders(Collections.singletonList("*"));
-				config.setExposedHeaders(Arrays.asList("Authorization"));
-				source.registerCorsConfiguration("/**", config);
-				config.setMaxAge(3600L);
-				
-				
-				return config;
-			}
-		};
+//			@Override
+//			public CorsConfiguration getCorsConfiguration(HttpServletRequest request) {
+		CorsConfiguration config = new CorsConfiguration();
+		UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+		config.setAllowedOrigins(Arrays.asList("http://localhost:3000", "http://127.0.0.1:3000",
+				"http://localhost:8080", "https://lotus-fe.vercel.app"));
+		config.setAllowedMethods(Collections.singletonList("*"));
+		config.setAllowCredentials(true);
+		config.setAllowedHeaders(Collections.singletonList("*"));
+		config.setExposedHeaders(Arrays.asList("Authorization"));
+		source.registerCorsConfiguration("/**", config);
+		config.setMaxAge(3600L);
+
+		return source;
+//			}
+//		};
 	}
 
 	@Bean
